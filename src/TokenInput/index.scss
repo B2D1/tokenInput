@@ -1,0 +1,92 @@
+.tokenInput__container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 9px 4px;
+  padding: 4px 11px;
+  font-size: 14px;
+  border: 1px solid #bbbfc4;
+  border-radius: 4px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  cursor: text;
+  user-select: none;
+
+  &--focus {
+    border-color: #3370ff;
+  }
+}
+
+.tokenInput__token {
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px 6px;
+  white-space: pre;
+  line-height: 22px;
+  color: #1f2329;
+  border-radius: 50px;
+  background: #eff0f1;
+  box-sizing: border-box;
+  cursor: default;
+  user-select: none;
+
+  span {
+    margin-right: 6px;
+  }
+
+  svg {
+    fill: #8F959E;
+    cursor: pointer;
+  }
+
+  &--error {
+    background: #fde2e2;
+    color: #d83931;
+
+    svg {
+      fill: #f98e8b;
+    }
+  }
+}
+
+.tokenInput__content {
+  width: 4px;
+  position: relative;
+
+  &__edit {
+    width: 100%;
+    height: 22px;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 22px;
+    color: #1f2329;
+    background: transparent;
+    border: none;
+    outline: none;
+    appearance: none;
+    caret-color: #1f2329;
+  }
+
+  &__placeholder {
+    position: absolute;
+    font-size: 14px;
+    line-height: 22px;
+    color: #3370ff;
+    white-space: pre;
+  }
+
+  &__mirror {
+    height: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 24px;
+    white-space: pre;
+    visibility: hidden;
+    z-index: 999;
+  }
+}
