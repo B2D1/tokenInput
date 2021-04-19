@@ -1,8 +1,8 @@
 {
   "name": "react-ui-tokeninput",
-  "version": "1.1.0",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "version": "1.2.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "git@github.com:B2D1/tokenInput.git",
   "author": "B2D1 <baobangdong@gmail.com>",
   "license": "MIT",
