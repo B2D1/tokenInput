@@ -1,7 +1,8 @@
 {
   "name": "react-ui-tokeninput",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": "git@github.com:B2D1/tokenInput.git",
   "author": "B2D1 <baobangdong@gmail.com>",
   "license": "MIT",
@@ -11,7 +12,7 @@
     "input"
   ],
   "files": [
-    "lib"
+    "dist"
   ],
   "peerDependencies": {
     "react": ">=16.13.1"
@@ -25,10 +26,6 @@
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-typescript": "^6.0.0-alpha.1",
-    "merge2": "^1.4.1",
-    "node-sass": "^5.0.0",
     "typescript": "^4.2.4"
   }
 }

@@ -1,16 +1,9 @@
 const { src, dest, task, parallel, series } = require("gulp");
 const babel = require("gulp-babel");
-const sass = require("gulp-sass");
 const clean = require("gulp-clean");
 
 const { exec } = require("child_process");
 const { promisify } = require("util");
-sass.compiler = require("node-sass");
-
-const genCSS = () =>
-  src("src/**/*.scss")
-    .pipe(sass().on("error", sass.logError))
-    .pipe(dest("lib"));
 
 const genJS = () =>
   src("src/**/*.tsx")
@@ -23,18 +16,20 @@ const genJS = () =>
         ],
       })
     )
-    .pipe(dest("lib"));
+    .pipe(dest("dist"));
 
 const genDeclaration = async function () {
   await promisify(exec)("yarn tsc");
-  return src("src/**/*.d.ts").pipe(dest("lib"));
+  return src("src/**/*.d.ts").pipe(dest("dist"));
 };
 
 const delDeclaration = function () {
   return src("src/**/*.d.ts").pipe(clean());
 };
 
+const copyCSS = () => src("src/**/*.css").pipe(dest("dist"));
+
 task(
   "default",
-  series(parallel(genCSS, genDeclaration, genJS), delDeclaration)
+  series(parallel(genDeclaration, genJS), copyCSS, delDeclaration)
 );
